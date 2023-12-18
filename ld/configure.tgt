@@ -442,6 +442,10 @@ i[3-7]86-*-haiku*)	targ_emul=elf_i386_haiku
 			;;
 i[3-7]86-*-vxworks*)	targ_emul=elf_i386_vxworks
 			;;
+i[3-7]86-*-worldos*)	targ_emul=elf_i386_worldos
+			targ_extra_emuls=elf_i386
+			targ64_extra_emuls="elf_x86_64_worldos elf_x86_64"
+			;;
 i[3-7]86-*-chaos)	targ_emul=elf_i386_chaos
 			;;
 ia16-*-elf*)		targ_emul=elf_i386
@@ -1062,6 +1066,9 @@ x86_64-*-gnu*)		targ_emul=elf_x86_64
 			targ_extra_libpath="elf_i386 elf32_x86_64"
 			tdir_elf_i386=`echo ${targ_alias} | sed -e 's/x86_64/i386/'`
 			;;
+x86_64-*-worldos*)	targ_emul=elf_x86_64_worldos
+			targ_extra_emuls="elf_i386_worldos elf_x86_64 elf_i386"
+			;;
 xgate-*-*)		targ_emul=xgateelf
 			targ_extra_ofiles=ldelfgen.o
 			;;
@@ -1146,6 +1153,9 @@ i[03-9x]86-*-cygwin* | x86_64-*-cygwin*)
 alpha*-*-*)
   NATIVE_LIB_DIRS='/usr/local/lib /usr/ccs/lib /lib /usr/lib'
   ;;
+
+*-*-worldos*)
+  NATIVE_LIB_DIRS='/data/lib'
 
 esac
 
