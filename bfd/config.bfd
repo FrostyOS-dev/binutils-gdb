@@ -1502,13 +1502,13 @@ case "${targ}" in
     ;;
 #endif
 
-  i[3-7]86-*-worldos*)
+  i[3-7]86-*-frostyos*)
     targ_defvec=i386_elf32_vec
     targ_selvecs=
     targ64_selvecs=x86_64_elf64_vec
     ;;
 #ifdef BFD64
-  x86_64-*-worldos*)
+  x86_64-*-frostyos*)
     targ_defvec=x86_64_elf64_vec
     targ_selvecs=i386_elf32_vec
     want64=true
